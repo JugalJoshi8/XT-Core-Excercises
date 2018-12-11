@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <main class="wrapper">
+        <header>
+            <h1>ATM Money Dispenser</h1>
+        </header>
+        <article class = 'atmContainer'>
+            <section class = 'atmContainer__atm'>
+                <h2>Welcome to ATM</h2>
+                <form class = 'form' action="">
+                    <label class = "form__input__label" for="form__input--amount">Enter the Amount</label>
+                    <input class = "form__input form__input--amount" id ="form__input--amount" type="text" pattern="\d*" value = "0" placeholder="Enter Amount">
+                    <input class = 'form__input form__input--submit' type="submit" value="Get Money">
+                </form>
+            </section>
+            <section class = 'atmContainer__notesDetails'>
+                <div class = 'bold'>You will get following amount</div>
+                <ul class = 'notesList'></ul>
+                <div class = 'totalNotes bold'>Total notes dispensed: 0</div>
+            </section>
+        </article>
+    </main>
+    <script src="./src/index.js"></script>
+</body>
+</html>

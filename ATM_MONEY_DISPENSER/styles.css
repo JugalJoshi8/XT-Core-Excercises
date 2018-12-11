@@ -1,0 +1,129 @@
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header, h1, h2, body, html, ul, li {
+    padding: 0;
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.wrapper {
+    width: 100%;
+    padding: 2rem;
+}
+
+header {
+    width: 100%;
+    height: 100px;
+    background-color: rgb(81, 91, 189);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    color: #fff;
+    padding: 2rem;
+}
+
+.atmContainer {
+    display: flex;
+    align-items: stretch;
+}
+
+.atmContainer__atm {
+    padding: 2rem;
+    border: solid 1px #ccc;
+    box-shadow: 2px 2px 4px #999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+
+.form, .form__input {
+    display: block;
+    width: 100%;
+} 
+
+h2 {
+    margin-bottom: 2rem;
+}
+
+.form__input--amount {
+    height: 40px;
+    border-radius: 5px;
+    border: solid 1px #ccc;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    text-align: right;
+}
+
+.form__input__label {
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.form__input--submit {
+    height: 50px;
+    background-color: rgb(65, 119, 236);
+    color: #fff;
+    outline: none;
+    border: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.form__input--submit:hover {
+    background-color: rgb(11, 82, 236);
+}
+
+.atmContainer__notesDetails {
+    flex: 1;
+    padding: 2rem;
+}
+
+.notesList {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    flex-direction: row-reverse;
+    list-style: none;
+    margin: 1rem 0;
+    border-top: solid 1px #bbb;
+}
+
+.notesList > li {
+    width: 50%;
+    height: 30px;
+    border-bottom: solid 1px #bbb;
+    line-height: 30px;
+    padding-left: 1rem;
+}
+
+.totalNotes {
+    height: 30px;
+    line-height: 30px;
+    border-bottom: solid 1px #bbb;
+
+}
+
+@media(max-width: 959px) {
+    .atmContainer {
+        flex-direction: column;
+    }
+}
+
+@media(max-width: 600px) {
+    .notesList > li {
+        width: 100%;
+    }
+}
