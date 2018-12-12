@@ -73,6 +73,17 @@ export default class ShoppingCart {
                             <div class = 'order__item__value font-bold font-xl'><span class = 'font-sm'>$</span>07.00</div>
                         </li>
                       </ul>
+                      <div class = 'checkout-button'>
+                        <button class = 'button button--blue'>Checkout</button>
+                      </div>
+                      <a class = 'font-lg continue-shopping' href = ''>Continue Shopping</a>
+                      <div class = 'secure-checkout'>
+                        <div class = 'secure-checkout__text font-lg'>Secure checkout. Shopping is always safe and secure</div>
+                        <img src = './imgs/secure.png' alt = 'secure'>
+                      </div>
+                      <div class = 'siginin-msg font-lg'>
+                        <a>SIGN IN</a> to save your cart and have accessto your itemsin mobile, tablet and desktop
+                      </div>
                     </section>
                 </div>
             `;

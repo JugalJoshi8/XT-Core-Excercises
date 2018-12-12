@@ -8,7 +8,7 @@ export default class ShoppingCartItem {
         <div class = 'cart-container'>
             <div class = 'cart-item'>
                 <div class = 'cart-item__img'>
-                    <img src = 'imgs/${this.item.imgName}' class = 'cart-item__img'>
+                    <img src = 'imgs/${this.item.imgName}' class = 'cart-item__img' alt = 'cloth'>
                 </div>
                 <div class = 'cart-item__desc'>
                     <div class = 'cart-item__name' >${this.item.name}</div>

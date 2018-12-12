@@ -12,3 +12,14 @@
 .button:hover, .button:focus {
     background: #eee;
 }
+
+.button--blue {
+    background: rgb(73, 76, 250);
+    color: #fff;
+    width: 100%;
+
+}
+
+.button--blue:hover, .button--blue:focus {
+    background: rgb(42, 42, 218);
+}
