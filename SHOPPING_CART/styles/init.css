@@ -3,13 +3,17 @@ html, body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-html, body, h1, h2, h3 {
+html, body, h1, h2, h3, ul, li {
     margin: 0;
     padding: 0;
 }
 
+ul {
+    list-style: none;
+}
+
 html {
-    font-size: 62.5%;
+    font-size: 80%;
 }
 
 @media(min-width: 640px) {
@@ -20,4 +24,24 @@ html {
 
 * {
     box-sizing: border-box;
+}
+
+.font-bold {
+    font-weight: bold;
+}
+
+.font-normal {
+    font-weight: normal;
+}
+
+.font-xl {
+    font-size: 1.4rem;
+}
+
+.font-lg {
+    font-size: 1.2rem;
+}
+
+.font-sm {
+    font-size: 0.8rem;
 }

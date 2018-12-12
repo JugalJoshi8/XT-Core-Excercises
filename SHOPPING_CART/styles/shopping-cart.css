@@ -6,3 +6,59 @@
     color: #333;
     border-bottom : solid 10px pink;
 }
+
+.promo {
+    padding: 3rem 6rem;
+    text-align: center; 
+    border-bottom: solid 1px #ddd;
+}
+
+.promo__header {
+    margin-bottom: 1rem;
+}
+
+.promo__form {
+    display: flex;
+    color: #333;
+    height: 40px;
+}
+
+.promo__form__input {
+    flex: 1;
+    outline: none;
+    border: solid 1px pink;
+    padding: 1rem;
+}
+
+.order {
+    padding: 2rem;
+}
+
+.order__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+}
+
+.order__item--total {
+    border-top: solid 1px #ddd;
+}
+
+.order__item__value {
+    display: flex;
+    align-items: center;
+}
+
+.order__item__value--free {
+    color: #666;
+}
+
+.order__item__name__main {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.order__item__name__sub {
+    color: #666;
+}

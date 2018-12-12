@@ -1,0 +1,14 @@
+.button {
+    text-transform: uppercase;
+    padding: 1rem;
+    color: #666;
+    border: none;
+    outline: none;
+    background: transparent;
+    cursor: pointer;
+    display: block;
+}
+
+.button:hover, .button:focus {
+    background: #eee;
+}

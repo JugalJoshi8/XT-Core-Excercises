@@ -57,20 +57,6 @@
     justify-content: center;
 }
 
-.cart-item__button {
-    text-transform: uppercase;
-    padding: 0.5rem;
-    color: #666;
-    border: none;
-    outline: none;
-    background: transparent;
-    cursor: pointer
-}
-
-.cart-item__button:hover, .cart-item__button:focus {
-    background: #eee;
-}
-
 .cart-item__currency {
     font-weight: normal;
     font-size: 0.8rem;

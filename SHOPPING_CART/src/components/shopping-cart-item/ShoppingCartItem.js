@@ -23,9 +23,9 @@ export default class ShoppingCartItem {
                 </div>
             </div>
             <div class = 'cart-item__buttons'>
-                <button class = 'cart-item__button'>Edit</button>
-                <button class = 'cart-item__button'>Remove</button>
-                <button class = 'cart-item__button'>Save for Later</button>
+                <button class = 'button cart-item__button'>Edit</button>
+                <button class = 'button cart-item__button'>Remove</button>
+                <button class = 'button cart-item__button'>Save for Later</button>
             </div>
         </div>
         `;
