@@ -82,7 +82,7 @@ export default class ShoppingCart {
                         <img src = './imgs/secure.png' alt = 'secure'>
                       </div>
                       <div class = 'siginin-msg font-lg'>
-                        <a>SIGN IN</a> to save your cart and have accessto your itemsin mobile, tablet and desktop
+                        <a>SIGN IN</a> to save your cart and have access to your items in mobile, tablet and desktop.
                       </div>
                     </section>
                 </div>
