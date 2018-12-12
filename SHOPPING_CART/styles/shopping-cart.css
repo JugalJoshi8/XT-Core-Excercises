@@ -1,0 +1,8 @@
+.shopping-cart__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+    color: #333;
+    border-bottom : solid 10px pink;
+}

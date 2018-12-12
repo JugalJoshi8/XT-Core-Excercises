@@ -1,0 +1,23 @@
+html, body {
+    
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+html, body, h1, h2, h3 {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+@media(min-width: 640px) {
+    html {
+        font-size: 100%;
+    }
+}
+
+* {
+    box-sizing: border-box;
+}

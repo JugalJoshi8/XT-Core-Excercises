@@ -1,0 +1,34 @@
+{
+    "cartItems": [
+        {
+            "name": "solid green cotton tshirt",
+            "styleId": "MS13KT1906",
+            "color": "blue",
+            "size": "S",
+            "quantity": "1",
+            "price": "11.00",
+            "currency": "$",
+            "imgName": "blue_tshirt.png"
+        },
+        {
+            "name": "pink rainbow print girls tee",
+            "styleId": "MS13KT1999",
+            "color": "pink",
+            "size": "M",
+            "quantity": "1",
+            "price": "17.00",
+            "currency": "$",
+            "imgName": "pink_girls_tshirt.png"
+        },
+        {
+            "name": "blue flower patten shirt",
+            "styleId": "MS13KT1106",
+            "color": "blue",
+            "size": "S",
+            "quantity": "1",
+            "price": "09.00",
+            "currency": "$",
+            "imgName": "blue_flower_shirt.png"
+        }
+    ]
+}
