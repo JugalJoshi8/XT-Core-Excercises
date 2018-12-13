@@ -3,8 +3,10 @@ import ShoppingCartItem from './../shopping-cart-item/ShoppingCartItem';
 import OrderDetails from './../order-details/OrderDetails'
 
 export default class ShoppingCart {
-    constructor() {
+    constructor(parent) {
+        this.parent = parent;
         this.shoppingCartService = new ShoppingCartService();
+        this.render();
     }
 
     render() {
@@ -23,8 +25,7 @@ export default class ShoppingCart {
                             <div>PRICE</div>
                         </div>
                     </header>
-                    <section>
-                        ${shoppingCartItems.map(item => new ShoppingCartItem(item).render()).join('')}
+                    <section id = 'shopping-cart-items'>
                     </section>
                     <section class = 'order-help'>
                         <section class= 'need-help'>
@@ -46,7 +47,10 @@ export default class ShoppingCart {
                     </section>
                 </div>
             `;
-            return markUp;
+            $(this.parent).html(markUp);
+            shoppingCartItems.forEach(item => {
+                new ShoppingCartItem('#shopping-cart-items', item);
+            });
         });
     }
 }

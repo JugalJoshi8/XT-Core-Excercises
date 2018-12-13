@@ -1,6 +1,7 @@
 {
     "cartItems": [
         {
+            "id": 1,
             "name": "solid green cotton tshirt",
             "styleId": "MS13KT1906",
             "color": "blue",
@@ -11,6 +12,7 @@
             "imgName": "blue_tshirt.png"
         },
         {
+            "id": 2,
             "name": "pink rainbow print girls tee",
             "styleId": "MS13KT1999",
             "color": "pink",
@@ -21,6 +23,7 @@
             "imgName": "pink_girls_tshirt.png"
         },
         {
+            "id": 3,
             "name": "blue flower patten shirt",
             "styleId": "MS13KT1106",
             "color": "blue",

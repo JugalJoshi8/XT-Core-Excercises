@@ -86,6 +86,7 @@
         }            
         &__buttons--desktop {
             padding: 1rem;
+            justify-content: flex-start;
         }
     
         &--desktop {
@@ -108,5 +109,9 @@
             }
         }
     }
+}
+
+.overlay-container {
+    display: none;
 }
 

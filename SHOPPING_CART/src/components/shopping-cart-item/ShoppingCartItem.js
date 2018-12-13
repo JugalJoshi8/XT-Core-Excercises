@@ -1,11 +1,16 @@
+import Overlay from './../overlay/Overlay';
+import EditItem from './../edit-item/EditItem';
+
 export default class ShoppingCartItem {
-    constructor(item) {
+    constructor(parent, item) {
+        this.parent = $(parent);
         this.item = item;
+        this.render();
     }
 
     render() {
         const markUp = `
-        <div class = 'cart-container'>
+        <div class = 'cart-container' id = 'cart-${this.item.id}'>
             <div class = 'cart-item cart-item--mobile'>
                 <div class = 'cart-item__img'>
                     <img src = 'imgs/${this.item.imgName}' class = 'cart-item__img' alt = 'cloth'>
@@ -33,9 +38,9 @@ export default class ShoppingCartItem {
                         <div class = 'cart-item__color'>Colour: ${this.item.color}</div>
                     </div>
                     <div class = 'cart-item__buttons cart-item__buttons--desktop'>
-                        <button class = 'button cart-item__button'>Edit</button>
-                        <button class = 'button cart-item__button'>Remove</button>
-                        <button class = 'button cart-item__button'>Save for Later</button>
+                        <button id = 'editDesktop' class = 'button cart-item__button'>Edit</button>
+                        <button id = 'editDesktop' class = 'button cart-item__button'>Remove</button>
+                        <button id = 'editDesktop' class = 'button cart-item__button'>Save for Later</button>
                     </div>
                 </div>
                 <div class = 'cart-item__size'>${this.item.size}</div>
@@ -46,12 +51,25 @@ export default class ShoppingCartItem {
                 </div>
             </div>
             <div class = 'cart-item__buttons cart-item__buttons--mobile'>
-                <button class = 'button cart-item__button'>Edit</button>
-                <button class = 'button cart-item__button'>Remove</button>
-                <button class = 'button cart-item__button'>Save for Later</button>
+                <button id = 'editMobile' class = 'button cart-item__button'>Edit</button>
+                <button id = 'removeMobile' class = 'button cart-item__button'>Remove</button>
+                <button id = 'saveMobile' class = 'button cart-item__button'>Save for Later</button>
+            </div>
+            <div class = 'overlay-container'>
+            
             </div>
         </div>
         `;
-        return markUp;
+        this.parent.append(markUp);
+        new Overlay(`#cart-${this.item.id} .overlay-container`, EditItem, this.item);
+        this.element = $(`#cart-${this.item.id}`);
+        this.overlay = this.element.find('.overlay-container');
+        this.element.find('#editMobile').click(_ => this.showOverlay());
+        this.element.find('#editDesktop').click(_ => this.showOverlay());
+    }
+
+    showOverlay() {
+        console.log('asdasdas');
+        this.overlay.show();
     }
 }

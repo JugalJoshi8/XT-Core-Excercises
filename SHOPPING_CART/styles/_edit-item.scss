@@ -1,0 +1,12 @@
+
+.edit-item {
+    display: flex;
+    overflow: hidden;
+    &__image {
+        height: 100%;
+        img {
+            height: 100%;
+        }
+    }
+    
+}
