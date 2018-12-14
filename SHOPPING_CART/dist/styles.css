@@ -44,6 +44,10 @@ html {
   font-size: 0.8rem;
 }
 
+.font-md {
+  font-size: 1rem;
+}
+
 .color-light {
   color: #666;
 }
@@ -402,8 +406,58 @@ html {
 
 .edit-item {
   display: flex;
-  overflow: hidden .edit-item __image;
-  overflow-height: 100%;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+}
+.edit-item__image {
+  height: 100%;
+}
+.edit-item__image img {
+  width: 100%;
+}
+.edit-item__form {
+  text-align: center;
+  margin-right: 1rem;
+}
+@media (min-width: 960px) {
+  .edit-item__form {
+    margin-right: 5rem;
+  }
+}
+.edit-item__selected-color {
+  margin: 1rem 0;
+}
+.edit-item__selectors {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+}
+.edit-item__selectors > div {
+  border: solid 1px #ddd;
+  padding: 1rem;
+}
+.edit-item__selectors > div:not(:last-child) {
+  margin-right: 1rem;
+}
+.edit-item__selectors > div select {
+  border: none;
+}
+.edit-item__selectors > div * {
+  cursor: pointer;
+}
+.edit-item__colors {
+  display: flex;
+  margin-bottom: 1rem;
+  justify-content: center;
+}
+.edit-item__color {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+.edit-item__color:not(:last-child) {
+  margin-right: 0.5rem;
 }
 
 /*# sourceMappingURL=styles.css.map */

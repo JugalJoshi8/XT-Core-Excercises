@@ -7,9 +7,10 @@
             "color": "blue",
             "size": "S",
             "quantity": "1",
-            "price": "11.00",
+            "price": "11.50",
             "currency": "$",
-            "imgName": "blue_tshirt.png"
+            "imgName": "blue_tshirt.png",
+            "availableColors": ["black", "blue"]
         },
         {
             "id": 2,
@@ -20,7 +21,8 @@
             "quantity": "1",
             "price": "17.00",
             "currency": "$",
-            "imgName": "pink_girls_tshirt.png"
+            "imgName": "pink_girls_tshirt.png",
+            "availableColors": ["pink", "black"]
         },
         {
             "id": 3,
@@ -31,7 +33,10 @@
             "quantity": "1",
             "price": "09.00",
             "currency": "$",
-            "imgName": "blue_flower_shirt.png"
+            "imgName": "blue_flower_shirt.png",
+            "availableColors": ["pink", "blue"]
         }
-    ]
+    ],
+    "promoCode": "JF10",
+    "promoDiscount": "07.00"
 }

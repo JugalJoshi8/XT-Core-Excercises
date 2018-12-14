@@ -6,20 +6,37 @@ export default class ShoppingCart {
     constructor(parent) {
         this.parent = parent;
         this.shoppingCartService = new ShoppingCartService();
+        this.shoppingCartService.getShoppingCartItems().then((res) => {
+            this.shoppingCartItems = res.cartItems;
+            this.cartDetails = res;
+            this.render();
+        });
+        this.onItemEdit = this.onItemEdit.bind(this);
+        this.onItemRemove = this.onItemRemove.bind(this);
+    }
+
+    onItemEdit(item)  {
+        this.element.remove();
+        this.render();
+    }
+
+    onItemRemove(item)  {
+        const index = this.shoppingCartItems.findIndex(cartItem => item.id === cartItem.id);
+        if(index > -1) {
+            this.shoppingCartItems.splice(index, 1);
+        }
+        this.element.remove();
         this.render();
     }
 
     render() {
-        return this.shoppingCartService.getShoppingCartItems().then(res => {
-            const shoppingCartItems = res.cartItems;
-            console.log(res)
-            const markUp = `
+        const markUp = `
                 <div class = 'shopping-cart'>
                     <header class = 'shopping-cart__header'>
                         <h1>YOUR SHOPPING BAG</h1>
-                        <h2 class = 'shopping-cart__header__items'>${shoppingCartItems.length} ITEMS</h2>
+                        <h2 class = 'shopping-cart__header__items'>${this.shoppingCartItems.length} ITEMS</h2>
                         <div class = "shopping-cart__header__cols">
-                            <div><span class = 'font-bold'>${shoppingCartItems.length}</span> ITEMS</div>
+                            <div><span class = 'font-bold'>${this.shoppingCartItems.length}</span> ITEMS</div>
                             <div>SIZE</div>
                             <div>QTY</div>
                             <div>PRICE</div>
@@ -42,15 +59,17 @@ export default class ShoppingCart {
                                     <input class = 'button promo__form__submit' type = 'submit' value = 'APPLY'>
                                 </form>
                             </section>
-                            ${new OrderDetails().render()}
+                            <div id = 'order-details'>
+                            </div>
                         </section>
                     </section>
                 </div>
             `;
-            $(this.parent).html(markUp);
-            shoppingCartItems.forEach(item => {
-                new ShoppingCartItem('#shopping-cart-items', item);
-            });
+        $(this.parent).html(markUp);
+        this.element = $('.shopping-cart');
+        this.shoppingCartItems.forEach(item => {
+            new ShoppingCartItem({ parentSelector: '#shopping-cart-items', item: item, onItemEdit: this.onItemEdit, onItemRemove: this.onItemRemove });
         });
+        new OrderDetails({parentSelector: '#order-details', cartDetails: this.cartDetails});
     }
 }

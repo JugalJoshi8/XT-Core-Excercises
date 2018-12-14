@@ -2,10 +2,53 @@
 .edit-item {
     display: flex;
     overflow: hidden;
+    align-items: center;
+    justify-content: center;
     &__image {
         height: 100%;
         img {
-            height: 100%;
+            width: 100%;
+        }
+    }
+    &__form {
+        text-align: center;
+        margin-right: 1rem;
+        @media(min-width: $lg-screen-min) {
+            margin-right: 5rem;
+        }
+    }
+    &__selected-color {
+        margin : 1rem 0;
+    }
+    &__selectors {
+        margin-bottom: 1rem;
+        display: flex;
+        justify-content: center;
+        > div {
+            border: solid 1px #ddd;
+            padding: 1rem;
+            &:not(:last-child) {
+                margin-right: 1rem;
+            }
+            select {
+                border: none;
+            }
+            * {
+                cursor: pointer;
+            }
+        }
+    }
+    &__colors {
+        display: flex;
+        margin-bottom: 1rem;
+        justify-content: center;
+    }
+    &__color {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        &:not(:last-child) {
+            margin-right: 0.5rem;
         }
     }
     
