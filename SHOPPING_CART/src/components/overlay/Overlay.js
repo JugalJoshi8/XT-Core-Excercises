@@ -18,7 +18,7 @@ export default class Overlay {
             </div>
         `;
         this.parent.append(markup);
-        new this.childComponent({...this.props, parentSelector: `${this.parentSelector} .overlay__child`, closeOverlay: _ => {this.parent.hide()}});
-        $('.overlay__close').click(_ => this.parent.hide());
+        new this.childComponent({...this.props, parentSelector: `${this.parentSelector} .overlay__child`});
+        $('.overlay__close').click(_ => this.props.closeOverlay());
     }
 }

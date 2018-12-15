@@ -70,6 +70,21 @@
 .shopping-cart__content {
     display: flex;
 }
+
+.overlay-container {
+    transform: scale(0);
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    transition: transform 0.5s ease-in-out;
+}
+
+.overlay-container.show {
+    transform: scale(1);
+}
+
 @media(min-width: $lg-screen-min) {
     .shopping-cart__header {
         flex-direction: column;

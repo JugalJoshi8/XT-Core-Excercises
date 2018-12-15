@@ -23,12 +23,26 @@ export default class ShoppingCart {
         if(isNew) {
             this.shoppingCartItems.push(item);
         }
-        this.element.remove();
-        this.render();
+        this.reRender();
     }
 
+    reRender() {
+        $('#shopping-cart-items').empty();
+        $('#order-details').empty();
+        this.shoppingCartItems.forEach(item => {
+            new ShoppingCartItem({ parentSelector: '#shopping-cart-items', item: item, onItemEdit: this.onItemAddOrEdit, onItemRemove: this.onItemRemove, showItemDetails: this.showItemDetails });
+        });
+        new OrderDetails({ parentSelector: '#order-details', cartDetails: this.cartDetails });
+     }
+
     showItemDetails(item) {
-        new Overlay({parentSelector: '.overlay-container',childComponent: EditItem, item: item, onItemEdit: this.onItemAddOrEdit})
+        $('.overlay-container').empty();
+        new Overlay({parentSelector: '.overlay-container',closeOverlay: this.closeOverlay, childComponent: EditItem, item: item, onItemEdit: this.onItemAddOrEdit})
+        $('.overlay-container').addClass('show');
+    }
+
+    closeOverlay() {
+        $('.overlay-container').removeClass('show');
     }
 
     onItemRemove(item) {
@@ -36,8 +50,7 @@ export default class ShoppingCart {
         if (index > -1) {
             this.shoppingCartItems.splice(index, 1);
         }
-        this.element.remove();
-        this.render();
+        this.reRender();
     }
 
     render() {
