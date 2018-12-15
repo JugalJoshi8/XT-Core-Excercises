@@ -60,6 +60,22 @@ html {
   color: #999;
 }
 
+.d-flex {
+  display: flex;
+}
+
+.flex-hcenter {
+  justify-content: center;
+}
+
+.flex-vcenter {
+  align-items: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
 .button {
   text-transform: uppercase;
   padding: 1rem;
@@ -79,6 +95,10 @@ html {
   background: #494cfa;
   color: #fff;
   width: 100%;
+}
+
+.button--border {
+  border: solid 1px #ddd;
 }
 
 .button--blue:hover, .button--blue:focus {
@@ -109,6 +129,7 @@ html {
 
 .order-help {
   display: flex;
+  border-top: solid 10px pink;
 }
 
 .need-help {
@@ -148,6 +169,14 @@ html {
   margin-left: 1rem;
 }
 
+#carousel-container {
+  display: none;
+}
+
+.shopping-cart__content {
+  display: flex;
+}
+
 @media (min-width: 960px) {
   .shopping-cart__header {
     flex-direction: column;
@@ -164,6 +193,10 @@ html {
     display: flex;
   }
 
+  .shopping-cart__content {
+    display: flex;
+  }
+
   .need-help {
     display: block;
   }
@@ -177,13 +210,16 @@ html {
     text-align: left;
     margin-right: 1rem;
   }
+
+  #carousel-container {
+    display: block;
+  }
 }
 .cart-container {
-  border-bottom: solid 1px #ddd;
   padding: 2rem;
 }
-.cart-container:last-child {
-  border-bottom: solid 10px pink;
+.cart-container:not(:last-child) {
+  border-bottom: solid 1px #ddd;
 }
 
 .cart-item {
@@ -231,6 +267,7 @@ html {
 }
 .cart-item__button {
   padding: 0 1rem;
+  flex-shrink: 0;
 }
 .cart-item__button:not(:last-child) {
   border-right: solid 1px #ddd;
@@ -275,10 +312,6 @@ html {
   .cart-item__desc__txt {
     padding: 2rem;
   }
-}
-
-.overlay-container {
-  display: none;
 }
 
 .order {
@@ -458,6 +491,53 @@ html {
 }
 .edit-item__color:not(:last-child) {
   margin-right: 0.5rem;
+}
+
+.carousel {
+  width: 300px;
+  border: solid 1px #ddd;
+  padding: 1rem 0;
+  margin-top: 156px;
+  margin: 156px 1rem 0;
+  overflow: hidden;
+  position: relative;
+}
+.carousel__arrow {
+  width: 50px;
+  height: 50px;
+  top: 0;
+  background: url(./../imgs/arrow_right.png);
+  background-size: 100% 100%;
+  position: absolute;
+  margin-top: 60%;
+  cursor: pointer;
+}
+.carousel__arrow--left {
+  left: 0;
+  transform: rotate(180deg);
+}
+.carousel__arrow--right {
+  right: 0;
+}
+
+.carousel-content {
+  display: inline-flex;
+  position: relative;
+  transition: left 0.5s ease-in-out;
+}
+
+.new-item {
+  padding: 1rem;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.new-item__price {
+  margin-bottom: 1rem;
+}
+.new-item img {
+  height: 300px;
 }
 
 /*# sourceMappingURL=styles.css.map */

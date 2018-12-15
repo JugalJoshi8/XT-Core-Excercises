@@ -56,23 +56,13 @@ export default class ShoppingCartItem {
                 <button id = 'removeMobile' class = 'button cart-item__button'>Remove</button>
                 <button id = 'saveMobile' class = 'button cart-item__button'>Save for Later</button>
             </div>
-            <div class = 'overlay-container'>
-            
-            </div>
         </div>
         `;
         this.parent.append(markUp);
-        new Overlay({...this.props, parentSelector: `#cart-${this.item.id} .overlay-container`, childComponent: EditItem, item: this.item});
         this.element = $(`#cart-${this.item.id}`);
-        this.overlay = this.element.find('.overlay-container');
-        this.element.find('#editMobile').click(_ => this.showOverlay());
-        this.element.find('#editDesktop').click(_ => this.showOverlay());
+        this.element.find('#editMobile').click(_ => this.props.showItemDetails(this.item));
+        this.element.find('#editDesktop').click(_ => this.props.showItemDetails(this.item));
         this.element.find('#removeMobile').click(_ => this.props.onItemRemove(this.item));
         this.element.find('#removeDesktop').click(_ => this.props.onItemRemove(this.item));
-    }
-
-    showOverlay() {
-        console.log('asdasdas');
-        this.overlay.show();
     }
 }

@@ -38,5 +38,55 @@
         }
     ],
     "promoCode": "JF10",
-    "promoDiscount": "07.00"
+    "promoDiscount": "07.00",
+    "newArrivals" : [
+        {
+            "id": 4,
+            "name": "black tshirt",
+            "styleId": "MS13KT1133",
+            "color": "",
+            "size": "",
+            "quantity": "",
+            "price": "19.00",
+            "currency": "$",
+            "imgName": "black_t.jpg",
+            "availableColors": ["black", "blue"]
+        },
+        {
+            "id": 5,
+            "name": "blue tshirt",
+            "styleId": "MS13KT110612",
+            "color": "",
+            "size": "",
+            "quantity": "",
+            "price": "18.00",
+            "currency": "$",
+            "imgName": "blue_t.jpg",
+            "availableColors": ["blue", "brown"]
+        },
+        {
+            "id": 6,
+            "name": "red flash tshirt",
+            "styleId": "MS13KT1111",
+            "color": "",
+            "size": "",
+            "quantity": "",
+            "price": "09.00",
+            "currency": "$",
+            "imgName": "red_t.jpg",
+            "availableColors": ["red", "blue"]
+        },
+        {
+            "id": 7,
+            "name": "chelsea tshirt",
+            "styleId": "MS13KT1197",
+            "color": "",
+            "size": "",
+            "quantity": "",
+            "price": "100.00",
+            "currency": "$",
+            "imgName": "chelsea_t.jpg",
+            "availableColors": ["blue", "white"]
+        }
+    ]
 }

@@ -1,9 +1,8 @@
 
 .cart-container {
-    border-bottom: solid 1px #ddd;
     padding: 2rem;
-    &:last-child {
-        border-bottom: solid 10px pink;
+    &:not(:last-child) {
+        border-bottom: solid 1px #ddd;
     }
 }
 
@@ -57,7 +56,8 @@
         justify-content: center;
     }
     &__button {
-        padding: 0 1rem ;
+        padding: 0 1rem;
+        flex-shrink: 0;
     }
     
     &__button:not(:last-child) {
@@ -111,7 +111,4 @@
     }
 }
 
-.overlay-container {
-    display: none;
-}
 

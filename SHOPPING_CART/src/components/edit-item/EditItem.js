@@ -3,6 +3,7 @@ export default class EditItem {
         this.parent = $(props.parentSelector);
         this.item = props.item;
         this.props = props;
+        this.isNew = this.item.size ? false : true;
         this.render();
     }
 
@@ -35,7 +36,7 @@ export default class EditItem {
                     </div>
                     </div>
                     <div>
-                        <input id = 'edit-item__button' type = 'submit' class = 'button button--blue' value = 'EDIT'>
+                        <input id = 'edit-item__button' type = 'submit' class = 'button button--blue' value = '${this.isNew ? 'ADD TO BAG' : 'EDIT'}'>
                     </div>
                 </form>
                 <div class = 'edit-item__image'>
@@ -54,7 +55,7 @@ export default class EditItem {
            this.item.quantity = this.element.find('#qty-selector').val();
            this.item.size = this.element.find('#size-selector').val();
            this.item.color = this.element.find('.edit-item__selected-color').text().trim();
-           this.props.onItemEdit(this.item);
+           this.props.onItemEdit(this.item, this.isNew);
            this.props.closeOverlay();
         })
 

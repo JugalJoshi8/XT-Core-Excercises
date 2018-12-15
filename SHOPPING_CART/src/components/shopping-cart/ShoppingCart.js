@@ -1,6 +1,9 @@
 import ShoppingCartService from './../../services/ShoppingCartService';
 import ShoppingCartItem from './../shopping-cart-item/ShoppingCartItem';
-import OrderDetails from './../order-details/OrderDetails'
+import OrderDetails from './../order-details/OrderDetails';
+import Carousel from './../carousel/Carousel';
+import Overlay from './../overlay/Overlay';
+import EditItem from './../edit-item/EditItem';
 
 export default class ShoppingCart {
     constructor(parent) {
@@ -11,18 +14,26 @@ export default class ShoppingCart {
             this.cartDetails = res;
             this.render();
         });
-        this.onItemEdit = this.onItemEdit.bind(this);
+        this.onItemAddOrEdit = this.onItemAddOrEdit.bind(this);
         this.onItemRemove = this.onItemRemove.bind(this);
+        this.showItemDetails = this.showItemDetails.bind(this);
     }
 
-    onItemEdit(item)  {
+    onItemAddOrEdit(item, isNew) {
+        if(isNew) {
+            this.shoppingCartItems.push(item);
+        }
         this.element.remove();
         this.render();
     }
 
-    onItemRemove(item)  {
+    showItemDetails(item) {
+        new Overlay({parentSelector: '.overlay-container',childComponent: EditItem, item: item, onItemEdit: this.onItemAddOrEdit})
+    }
+
+    onItemRemove(item) {
         const index = this.shoppingCartItems.findIndex(cartItem => item.id === cartItem.id);
-        if(index > -1) {
+        if (index > -1) {
             this.shoppingCartItems.splice(index, 1);
         }
         this.element.remove();
@@ -32,6 +43,8 @@ export default class ShoppingCart {
     render() {
         const markUp = `
                 <div class = 'shopping-cart'>
+                <div class = 'shopping-cart__content'>
+                <div>
                     <header class = 'shopping-cart__header'>
                         <h1>YOUR SHOPPING BAG</h1>
                         <h2 class = 'shopping-cart__header__items'>${this.shoppingCartItems.length} ITEMS</h2>
@@ -43,7 +56,11 @@ export default class ShoppingCart {
                         </div>
                     </header>
                     <section id = 'shopping-cart-items'>
+                    </section>                    
+                    </div>
+                    <section id = 'carousel-container'>
                     </section>
+                    </div>
                     <section class = 'order-help'>
                         <section class= 'need-help'>
                             <div class = 'color-light font-bold'>Need help or have questions?</div>
@@ -62,14 +79,18 @@ export default class ShoppingCart {
                             <div id = 'order-details'>
                             </div>
                         </section>
-                    </section>
+                    </section>   
+                    <div class = 'overlay-container'>
+            
+                    </div>                
                 </div>
             `;
         $(this.parent).html(markUp);
         this.element = $('.shopping-cart');
         this.shoppingCartItems.forEach(item => {
-            new ShoppingCartItem({ parentSelector: '#shopping-cart-items', item: item, onItemEdit: this.onItemEdit, onItemRemove: this.onItemRemove });
+            new ShoppingCartItem({ parentSelector: '#shopping-cart-items', item: item, onItemEdit: this.onItemAddOrEdit, onItemRemove: this.onItemRemove, showItemDetails: this.showItemDetails });
         });
-        new OrderDetails({parentSelector: '#order-details', cartDetails: this.cartDetails});
+        new OrderDetails({ parentSelector: '#order-details', cartDetails: this.cartDetails });
+        new Carousel({ parentSelector: '#carousel-container', items: this.cartDetails.newArrivals, onViewDetails: this.showItemDetails });
     }
 }

@@ -1,0 +1,13 @@
+.new-item {
+    padding: 1rem;
+    width: $carousel-width;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__price {
+        margin-bottom: 1rem;
+    }
+    img {
+        height: 300px;
+    }
+}

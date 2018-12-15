@@ -20,6 +20,10 @@
 
 }
 
+.button--border {
+    border: solid 1px #ddd;
+}
+
 .button--blue:hover, .button--blue:focus {
     background: rgb(42, 42, 218);
 }
